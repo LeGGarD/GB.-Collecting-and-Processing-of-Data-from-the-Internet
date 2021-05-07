@@ -14,7 +14,9 @@ class Database:
 
     def add_post(self, data):
         session = self.maker()
-        post = models.Post(**data["post_data"], author=models.Author(**data.["author_data"]))
+        author = models.Author(**data["author_data"])
+        post = models.Post(**data["post_data"])
+        print(f"author and post initialized successfully")
 
         try:
             session.add(post)

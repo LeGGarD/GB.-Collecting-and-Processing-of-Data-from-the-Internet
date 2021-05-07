@@ -75,6 +75,7 @@ class GbBlogParse:
                 "id": soup.find("comments").attrs.get("commentable-id"),
             },
             "author_data": {
+                "id": int(author_tag.parent.attrs.get("href").split("/")[-1]),
                 "url": urljoin(url, author_tag.parent.attrs.get("href")),
                 "name": author_tag.text,
             },
