@@ -1,4 +1,5 @@
 FEED_SELECTORS = {
+    # 'start': '//li[@data-marker="category[1000030]"]//a/@href',
     'pagination': '//div[contains(@class, "pagination-hidden-3jtv4")]//a[contains(@class, "pagination-page")]/@href',
     'post': '//div[contains(@class, "iva-item-titleStep-2bjuh")]//a[@data-marker="item-title"]/@href',
 }
