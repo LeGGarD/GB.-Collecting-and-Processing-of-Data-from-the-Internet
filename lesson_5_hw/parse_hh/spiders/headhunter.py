@@ -45,9 +45,9 @@ class HeadhunterSpider(scrapy.Spider):
             response, self._xpath_selectors['vacancy'], self.vacancy_parse
         )
 
-    def vacancy_parse(self, response, *args, **kwargs):
+    def vacancy_parse(self, response):
         loader = HeadhunterLoader(response=response)
         loader.add_value("url", response.url)
         for key, xpath in self._xpath_data_selectors.items():
             loader.add_xpath(key, xpath)
-        yield loader.load_item
+        yield loader.load_item()
